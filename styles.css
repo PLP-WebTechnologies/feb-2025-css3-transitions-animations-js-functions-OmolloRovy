@@ -1,0 +1,178 @@
+/* Base styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+    color: #333;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.dark-mode {
+    background-color: #222;
+    color: #f5f5f5;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.preference-panel {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .preference-panel {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.toggle-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-group label {
+    margin-right: 10px;
+    width: 150px;
+}
+
+.color-picker {
+    display: flex;
+    align-items: center;
+}
+
+.color-picker label {
+    margin-right: 10px;
+    width: 150px;
+}
+
+.demo-area {
+    text-align: center;
+    margin: 40px 0;
+}
+
+/* Button styles with animation */
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    background-color: #4a6fa5;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.pulse-hover:hover {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1) translateY(-3px);
+    }
+    50% {
+        transform: scale(1.05) translateY(-3px);
+    }
+    100% {
+        transform: scale(1) translateY(-3px);
+    }
+}
+
+/* Box animation */
+.box {
+    width: 150px;
+    height: 150px;
+    background-color: #4a6fa5;
+    margin: 40px auto;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.box.animated {
+    animation: spinAndColor 2s ease-in-out;
+}
+
+@keyframes spinAndColor {
+    0% {
+        transform: rotate(0deg) scale(1);
+        background-color: #4a6fa5;
+    }
+    50% {
+        transform: rotate(180deg) scale(1.2);
+        background-color: #ff6b6b;
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+        background-color: #4a6fa5;
+    }
+}
+
+/* Gallery image animations */
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.gallery-img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Fade-in animation for page load */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container > * {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.container > *:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.container > *:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.container > *:nth-child(4) {
+    animation-delay: 0.6s;
+}
